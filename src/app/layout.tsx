@@ -14,27 +14,22 @@ export const metadata: Metadata = {
   description: "Notion Clone by Amir Ali Azimloo",
 };
 
-export default function RootLayout({ 
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
-  console.log(db)
+  console.log(db);
 
   return (
     <html lang="en">
-      <body className={twMerge('bg-background', inter.className)}>
-      <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          >
-        <AppStateProvider>
-        {children}
-        <Toaster />
-        </AppStateProvider>
-          </ThemeProvider>
+      <body className={twMerge("bg-background", inter.className)}>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          <AppStateProvider>
+            {children}
+            <Toaster />
+          </AppStateProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
