@@ -121,3 +121,7 @@ export const subscriptions = pgTable('subscriptions', {
     mode: 'string',
   }).default(sql`now()`),
 });
+
+
+
+

@@ -4,6 +4,8 @@ import "./globals.css";
 import db from "@/lib/supabase/db";
 import { ThemeProvider } from "@/lib/providers/next-theme-provider";
 import { twMerge } from "tailwind-merge";
+import AppStateProvider from "@/lib/providers/state-provider";
+import { Toaster } from "@/components/ui/toaster";
 
 const inter = DM_Sans({ subsets: ["latin"] });
 
@@ -28,8 +30,10 @@ export default function RootLayout({
           defaultTheme="dark"
           enableSystem
           >
-
+        <AppStateProvider>
         {children}
+        <Toaster />
+        </AppStateProvider>
           </ThemeProvider>
       </body>
     </html>
