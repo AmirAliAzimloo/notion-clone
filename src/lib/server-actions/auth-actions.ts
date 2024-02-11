@@ -14,7 +14,10 @@ export async function actionLoginUser({
     email,
     password,
   });
-  return response;
+
+
+
+  return JSON.parse(JSON.stringify(response));
 }
 
 export async function actionSignUpUser({
