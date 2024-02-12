@@ -48,7 +48,9 @@ const Sidebar: React.FC<SidebarProps> = async ({ params, className }) => {
         className
       )}
     >
+      <div>
       Sidebar
+      </div>
     </aside>
   );
 };
