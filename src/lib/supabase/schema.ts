@@ -137,3 +137,5 @@ export const collaborators = pgTable("collaborators", {
     .notNull()
     .references(() => users.id, { onDelete: "cascade" }),
 });
+
+
