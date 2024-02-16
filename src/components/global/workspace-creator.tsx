@@ -16,8 +16,7 @@ import { SelectGroup } from '@radix-ui/react-select';
 import { Lock, Plus, Share } from 'lucide-react';
 import { Button } from '../ui/button';
 import { v4 } from 'uuid';
-// import { addCollaborators, createWorkspace } from '@/lib/supabase/queries';
-import {  createWorkspace } from '@/lib/supabase/queries';
+import { addCollaborators, createWorkspace } from '@/lib/supabase/queries';
 import CollaboratorSearch from './collaborator-search';
 import { ScrollArea } from '../ui/scroll-area';
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
@@ -63,7 +62,7 @@ const WorkspaceCreator = () => {
       if (permissions === 'shared') {
         toast({ title: 'Success', description: 'Created the workspace' });
         await createWorkspace(newWorkspace);
-        // await addCollaborators(collaborators, uuid);
+        await addCollaborators(collaborators, uuid);
         router.refresh();
       }
     }
@@ -113,6 +112,7 @@ const WorkspaceCreator = () => {
           <SelectTrigger className="w-full h-26 -mt-3">
             <SelectValue />
           </SelectTrigger>
+
           <SelectContent>
             <SelectGroup>
               <SelectItem value="private">
@@ -145,6 +145,7 @@ const WorkspaceCreator = () => {
               </SelectItem>
             </SelectGroup>
           </SelectContent>
+
         </Select>
       </>
       {permissions === 'shared' && (
