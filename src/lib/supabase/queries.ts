@@ -179,3 +179,4 @@ export const getSharedWorkspaces = async (userId: string) => {
 //     .where(ilike(users.email, `${email}%`));
 //   return accounts;
 // };
+ 
