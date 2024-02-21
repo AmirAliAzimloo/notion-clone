@@ -89,7 +89,7 @@ const Header = () => {
           dark:text-white
         "
         >
-          Notion Clone.
+          cypress.
         </span>
       </Link>
       <NavigationMenu className="hidden md:block">

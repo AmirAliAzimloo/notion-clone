@@ -1,8 +1,8 @@
 {
-  "id": "97fb97e0-f0d1-4238-bedc-373260a8e495",
-  "prevId": "4ad9cc3e-cd5a-498b-8211-4ba7dea7cbb2",
   "version": "5",
   "dialect": "pg",
+  "id": "9cd1faa9-ee4c-48a7-b5ab-7a0384f80b74",
+  "prevId": "6e08bab1-5366-455a-9ab5-aff713371ab5",
   "tables": {
     "collaborators": {
       "name": "collaborators",
@@ -82,8 +82,7 @@
           "name": "created_at",
           "type": "timestamp with time zone",
           "primaryKey": false,
-          "notNull": true,
-          "default": "now()"
+          "notNull": false
         },
         "title": {
           "name": "title",
@@ -109,6 +108,12 @@
           "primaryKey": false,
           "notNull": false
         },
+        "logo": {
+          "name": "logo",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
         "banner_url": {
           "name": "banner_url",
           "type": "text",
@@ -119,13 +124,13 @@
           "name": "workspace_id",
           "type": "uuid",
           "primaryKey": false,
-          "notNull": true
+          "notNull": false
         },
         "folder_id": {
           "name": "folder_id",
           "type": "uuid",
           "primaryKey": false,
-          "notNull": true
+          "notNull": false
         }
       },
       "indexes": {},
@@ -175,8 +180,7 @@
           "name": "created_at",
           "type": "timestamp with time zone",
           "primaryKey": false,
-          "notNull": true,
-          "default": "now()"
+          "notNull": false
         },
         "title": {
           "name": "title",
@@ -202,6 +206,12 @@
           "primaryKey": false,
           "notNull": false
         },
+        "logo": {
+          "name": "logo",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
         "banner_url": {
           "name": "banner_url",
           "type": "text",
@@ -212,7 +222,7 @@
           "name": "workspace_id",
           "type": "uuid",
           "primaryKey": false,
-          "notNull": true
+          "notNull": false
         }
       },
       "indexes": {},
@@ -371,8 +381,7 @@
           "name": "created_at",
           "type": "timestamp with time zone",
           "primaryKey": false,
-          "notNull": true,
-          "default": "now()"
+          "notNull": false
         },
         "workspace_owner": {
           "name": "workspace_owner",
@@ -426,8 +435,8 @@
   "enums": {},
   "schemas": {},
   "_meta": {
-    "columns": {},
     "schemas": {},
-    "tables": {}
+    "tables": {},
+    "columns": {}
   }
 }

@@ -112,7 +112,6 @@ const WorkspaceCreator = () => {
           <SelectTrigger className="w-full h-26 -mt-3">
             <SelectValue />
           </SelectTrigger>
-
           <SelectContent>
             <SelectGroup>
               <SelectItem value="private">
@@ -145,7 +144,6 @@ const WorkspaceCreator = () => {
               </SelectItem>
             </SelectGroup>
           </SelectContent>
-
         </Select>
       </>
       {permissions === 'shared' && (

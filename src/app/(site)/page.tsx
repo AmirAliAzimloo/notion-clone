@@ -1,48 +1,39 @@
-//? pakages
-import Image from "next/image";
-import { randomUUID } from "crypto";
-import { twMerge } from "tailwind-merge";
-import clsx from "clsx";
+import TitleSection from '@/components/landing-page/title-section';
+import { Button } from '@/components/ui/button';
+import Image from 'next/image';
+import React from 'react';
+import Banner from '../../../public/appBanner.png';
+import Cal from '../../../public/cal.png';
+import Diamond from '../../../public/icons/diamond.svg';
+import CheckIcon from '../../../public/icons/check.svg';
+import { CLIENTS, PRICING_CARDS, PRICING_PLANS, USERS } from '@/lib/constants';
+import { randomUUID } from 'crypto';
+import { twMerge } from 'tailwind-merge';
+import clsx from 'clsx';
+import CustomCard from '@/components/landing-page/custom-card';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { CardContent, CardDescription, CardTitle } from '@/components/ui/card';
 
-//? locale
-import TitleSection from "@/components/landing-page/title-section";
-import { Button } from "@/components/ui/button";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { CardContent, CardDescription, CardTitle } from "@/components/ui/card";
-import CustomCard from "@/components/landing-page/custom-card";
-
-//? fake data
-import { CLIENTS, PRICING_CARDS, PRICING_PLANS, USERS } from "@/lib/constants";
-
-//? assets
-import Banner from "../../../public/appBanner.png";
-import Cal from "../../../public/cal.png";
-import Diamond from "../../../public/icons/diamond.svg";
-import CheckIcon from "../../../public/icons/check.svg";
-
-export default function Home() {
+const HomePage = () => {
   return (
     <>
-      {/* //!1 */}
-      <section>
+      <section
+        className=" overflow-hidden
+      px-4
+      sm:px-6
+      mt-10
+      sm:flex
+      sm:flex-col
+      gap-4
+      md:justify-center
+      md:items-center"
+      >
+        <TitleSection
+          pill="✨ Your Workspace, Perfected"
+          title="All-In-One Collaboration and Productivity Platform"
+        />
         <div
-          className=" overflow-hidden
-    px-4
-    sm:px-6
-    mt-10
-    sm:flex
-    sm:flex-col
-    gap-4
-    md:justify-center
-    md:items-center"
-        >
-          <TitleSection
-            pill="✨ Your Workspace, Perfected"
-            title="All-In-One Collaboration and Productivity Platform"
-          />
-
-          <div
-            className="bg-white
+          className="bg-white
           p-[2px]
           mt-6
           rounded-xl
@@ -51,22 +42,21 @@ export default function Home() {
           to-brand-primaryBlue
           sm:w-[300px]
         "
-          >
-            <Button
-              variant="btn-secondary"
-              className=" w-full
+        >
+          <Button
+            variant="btn-secondary"
+            className=" w-full
             rounded-[10px]
             p-6
             text-2xl
             bg-background
           "
-            >
-              Get Notion Clone Free
-            </Button>
-          </div>
-
-          <div
-            className="md:mt-[-90px]
+          >
+            Get Cypress Free
+          </Button>
+        </div>
+        <div
+          className="md:mt-[-90px]
           sm:w-full
           w-[750px]
           flex
@@ -77,10 +67,13 @@ export default function Home() {
           sm:ml-0
           ml-[-50px]
         "
-          >
-            <Image src={Banner} alt="Application Banner" />
-            <div
-              className="bottom-0
+        >
+          <Image
+            src={Banner}
+            alt="Application Banner"
+          />
+          <div
+            className="bottom-0
             top-[50%]
             bg-gradient-to-t
             dark:from-background
@@ -89,17 +82,13 @@ export default function Home() {
             absolute
             z-10
           "
-            ></div>
-          </div>
+          ></div>
         </div>
       </section>
-      {/* //!2 */}
       <section className="relative">
         <div
-          className="
-          overflow-hidden
+          className="overflow-hidden
           flex
-          
           after:content['']
           after:dark:from-brand-dark
           after:to-transparent
@@ -131,7 +120,6 @@ export default function Home() {
               className="flex
                 flex-nowrap
                 animate-slide
-                client-logo
           "
             >
               {CLIENTS.map((client) => (
@@ -149,7 +137,7 @@ export default function Home() {
                     src={client.logo}
                     alt={client.alt}
                     width={200}
-                    className="object-contain max-w-none "
+                    className="object-contain max-w-none"
                   />
                 </div>
               ))}
@@ -157,7 +145,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-      {/* //!3 */}
       <section
         className="px-4
         sm:px-6
@@ -198,11 +185,13 @@ export default function Home() {
           border-opacity-10
         "
         >
-          <Image src={Cal} alt="Banner" className="rounded-2xl" />
+          <Image
+            src={Cal}
+            alt="Banner"
+            className="rounded-2xl"
+          />
         </div>
       </section>
-      {/* //!4 */}
-
       <section className="relative">
         <div
           className="w-full
@@ -235,13 +224,13 @@ export default function Home() {
             <div
               key={randomUUID()}
               className={twMerge(
-                clsx("mt-10 flex flex-nowrap gap-6 self-start", {
-                  "flex-row-reverse": index === 1,
-                  "animate-[slide_250s_linear_infinite]": true,
-                  "animate-[slide_250s_linear_infinite_reverse]": index === 1,
-                  "ml-[100vw]": index === 1,
+                clsx('mt-10 flex flex-nowrap gap-6 self-start', {
+                  'flex-row-reverse': index === 1,
+                  'animate-[slide_250s_linear_infinite]': true,
+                  'animate-[slide_250s_linear_infinite_reverse]': index === 1,
+                  'ml-[100vw]': index === 1,
                 }),
-                "hover:paused"
+                'hover:paused'
               )}
             >
               {USERS.map((testimonial, index) => (
@@ -285,8 +274,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
-      {/* //!5 */}
       <section
         className="mt-20
         px-4
@@ -313,9 +300,9 @@ export default function Home() {
             <CustomCard
               key={card.planType}
               className={clsx(
-                "w-[300px] rounded-2xl dark:bg-black/40 background-blur-3xl relative",
+                'w-[300px] rounded-2xl dark:bg-black/40 background-blur-3xl relative',
                 {
-                  "border-brand-primaryPurple/70":
+                  'border-brand-primaryPurple/70':
                     card.planType === PRICING_PLANS.proplan,
                 }
               )}
@@ -359,9 +346,9 @@ export default function Home() {
                       /mo
                     </span>
                   ) : (
-                    ""
+                    ''
                   )}
-                  <p className="dark:text-washed-purple-800 text-nowrap">
+                  <p className="dark:text-washed-purple-800">
                     {card.description}
                   </p>
                   <Button
@@ -369,8 +356,8 @@ export default function Home() {
                     className="whitespace-nowrap w-full mt-4"
                   >
                     {card.planType === PRICING_PLANS.proplan
-                      ? "Go Pro"
-                      : "Get Started"}
+                      ? 'Go Pro'
+                      : 'Get Started'}
                   </Button>
                 </CardContent>
               }
@@ -392,7 +379,10 @@ export default function Home() {
                       gap-2
                     "
                     >
-                      <Image src={CheckIcon} alt="Check Icon" />
+                      <Image
+                        src={CheckIcon}
+                        alt="Check Icon"
+                      />
                       {feature}
                     </li>
                   ))}
@@ -404,4 +394,6 @@ export default function Home() {
       </section>
     </>
   );
-}
+};
+
+export default HomePage;

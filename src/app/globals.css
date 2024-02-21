@@ -3,16 +3,10 @@
 @tailwind utilities;
 
 html,
-body{
+body {
   height: 100%;
 }
 
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-} */
- 
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -59,7 +53,7 @@ body{
     --ring: 263.4 70% 50.4%;
   }
 }
- 
+
 @layer base {
   * {
     @apply border-border;
@@ -69,31 +63,18 @@ body{
   }
 }
 
-
 .animate-slide {
   animation: 15s slide linear infinite;
 }
 
 @keyframes slide {
-  0% {
+  from {
     transform: translateX(0);
   }
-  100% {
+  to {
     transform: translateX(-100%);
   }
 }
-
-/* .client-logo {
-  transition: transform 0.3s ease;
-}
-
-.client-logo:nth-child(odd) {
-  transition-delay: 0.1s; 
-}
-
-.client-logo:nth-child(even) {
-  transition-delay: 0.2s; 
-} */
 
 .ce-popover-item:hover {
   @apply bg-muted/40 transition-all !important;

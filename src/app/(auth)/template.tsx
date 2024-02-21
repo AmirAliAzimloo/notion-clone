@@ -11,7 +11,7 @@ const Template: React.FC<TemplateProps> = ({ children }) => {
       h-screen
       p-6 flex 
       justify-center"
-    > 
+    >
       {children}
     </div>
   );

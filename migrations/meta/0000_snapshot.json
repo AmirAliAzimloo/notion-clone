@@ -1,8 +1,8 @@
 {
-  "id": "eb678b4c-85a8-4d47-82cf-5f16d9c986bc",
-  "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "5",
   "dialect": "pg",
+  "id": "13b54a97-f449-4e2d-86b2-2d26b881092a",
+  "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "workspaces": {
       "name": "workspaces",
@@ -19,8 +19,7 @@
           "name": "created_at",
           "type": "timestamp with time zone",
           "primaryKey": false,
-          "notNull": true,
-          "default": "now()"
+          "notNull": false
         },
         "workspace_owner": {
           "name": "workspace_owner",
@@ -74,8 +73,8 @@
   "enums": {},
   "schemas": {},
   "_meta": {
-    "columns": {},
     "schemas": {},
-    "tables": {}
+    "tables": {},
+    "columns": {}
   }
 }
