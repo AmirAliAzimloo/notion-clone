@@ -17,7 +17,7 @@ export async function middleware(req: NextRequest) {
   const emailLinkError = 'Email link is invalid or has expired';
   if (
     req.nextUrl.searchParams.get('error_description') === emailLinkError &&
-    req.nextUrl.pathname !== '/signup'
+    req.nextUrl.pathname !== '/signup' 
   ) {
     return NextResponse.redirect(
       new URL(
