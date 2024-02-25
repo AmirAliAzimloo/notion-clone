@@ -12,7 +12,7 @@ export async function middleware(req: NextRequest) {
     if (!session) {
       return NextResponse.redirect(new URL('/login', req.url));
     }
-  }
+  } 
 
   const emailLinkError = 'Email link is invalid or has expired';
   if (
