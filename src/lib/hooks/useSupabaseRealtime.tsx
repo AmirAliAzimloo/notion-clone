@@ -5,7 +5,7 @@ import { useAppState } from '../providers/state-provider';
 import { File } from '../supabase/supabase.types';
 import { useRouter } from 'next/navigation';
 
-const useSupabaseRealtime = () => {
+const useSupabaseRealtime = () => { 
   const supabase = createClientComponentClient();
   const { dispatch, state, workspaceId: selectedWorskpace } = useAppState();
   const router = useRouter();
